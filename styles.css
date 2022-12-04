@@ -1,0 +1,92 @@
+*{box-sizing: border-box; font-family: sans-serif;}
+body{margin: 0;}
+nav{
+    position: relative;
+    width: 100%;
+    height: min-content;
+    background-color: #000;
+    color: #FFF;
+}
+nav .desktop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .desktop .logo{min-width: 200px;}
+nav .desktop .primary,
+nav .desktop .secondary{
+    display: flex;
+}
+nav .desktop a{
+    color: #fff;
+    padding: .9em 1.7em;
+    text-decoration: none;
+    font-size: 1.1em
+}
+nav .desktop a:hover{
+    background-color: #0cf;
+    color: #000;
+}
+@media screen and (max-width: 898px){
+    nav .desktop .logo{min-width: 100px;}
+    nav .desktop .secondary.full{ display: none;}
+    nav .desktop .secondary.mini{ display: block !important;}
+}
+nav .desktop .secondary.mini .submenu{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+}
+nav .desktop .secondary.mini:hover .submenu{
+    display: flex;
+}
+nav .desktop .secondary.mini{display: none;}
+
+@media screen and (max-width: 535px){
+    nav .desktop{display: none;}
+    nav .mobile{
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1em;
+        position: relative;
+    }
+    nav .mobile .more__button{
+        border: none;
+        padding: 1em;
+        background-color: #000;
+        color: #fff;
+        cursor: pointer;
+    }
+    nav .mobile .more__button span{font-size: 3em;}
+    nav .mobile .more__button:hover{
+        background-color: #0cf;
+        color: #000;
+    }
+    nav .mobile .links{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        transition: left .2s;
+    }
+    nav .mobile .links a{
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.1em;
+        padding: 1.3em 0 1.3em 1.3em
+    }
+    nav .mobile .links a:hover{
+        background-color: #0cf;
+        color: #000;
+    }
+    .hide{left: -100% !important;}
+}
+nav .mobile{display: none;}
